@@ -14,12 +14,11 @@ import com.academy.course.endpoint.service.CourseService;
 
 import lombok.extern.slf4j.Slf4j;
 
-public class Controller {
+@RestController
+@RequestMapping("v1/admin/course")
+@Slf4j
+public class CourseController {
 
-	@RestController
-	@RequestMapping("v1/admin/course")
-	@Slf4j
-	public class CourseController {
 
 		@Autowired
 		private final CourseService courseService;
@@ -33,6 +32,5 @@ public class Controller {
 			return new ResponseEntity<>(courseService.list(pageable), HttpStatus.OK);
 		}
 
-	}
 
 }
