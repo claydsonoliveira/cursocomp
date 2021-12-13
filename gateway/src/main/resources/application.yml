@@ -2,7 +2,8 @@ spring:
   application:
     name: gateway
 server:
-  port: 9090
+  port: 9092
+
   servlet:
     context-path: /gateway
     
@@ -14,9 +15,13 @@ eureka:
       defautZone: http://localhost:9091/eureka/
     fetch-registry: true
     register-with-eureka: true
+
     
-zuul:
-  sensitive-headers: Cookie   
-      
+#zuul:
+#  routes:
+#    course:
+#      service-id: course
+#      path: /course/**     
+#  sensitive-headers: Cookie   
     
       
