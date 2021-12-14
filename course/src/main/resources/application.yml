@@ -28,3 +28,17 @@ eureka:
       defautZone: http://localhost:9091/eureka
    fetch-registry: true
    register-with-eureka: true
+<<<<<<< HEAD
+=======
+
+#hystrix:
+#  command:
+#    defaut:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
+
+#ribbon.ConnectTimeout: 10000
+#ribbon.ReadTimeout: 20000
+>>>>>>> 086fb90ef8e18db4bd8582362b6d780edd4b11cb

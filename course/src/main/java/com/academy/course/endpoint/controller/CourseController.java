@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.academy.core.model.Course;
 import com.academy.course.endpoint.service.CourseService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,10 +28,15 @@ public class CourseController {
 			this.courseService = courseService;
 		}
 
+//		@HystrixCommand(fallbackMethod = "listAlternative")
 		@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	    public ResponseEntity<Iterable<Course>> list(Pageable pageable) {
 			return new ResponseEntity<>(courseService.list(pageable), HttpStatus.OK);
 		}
+
+//	    public String listAlternative(Pageable pageable) {
+//	    	return "Falha Teste";
+//	    }
 
 
 }
