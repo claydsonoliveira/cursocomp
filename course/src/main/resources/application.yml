@@ -1,14 +1,6 @@
 server:
-  port: 9092
+  port: ${PORT:0}
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defautZone: http://localhost:9091/eureka/
-    fetch-registry: true
-    register-with-eureka: true
   
 spring:
   application:
@@ -27,3 +19,12 @@ spring:
     username: root
     password: devdojo
       
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+   service-url:
+      defautZone: http://localhost:9091/eureka
+   fetch-registry: true
+   register-with-eureka: true
