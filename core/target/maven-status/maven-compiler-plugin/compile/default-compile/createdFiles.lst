@@ -2,3 +2,4 @@ com/academy/core/repository/CourseRepository.class
 com/academy/core/model/Course.class
 com/academy/core/model/AbstractEntity.class
 com/academy/core/model/Course$CourseBuilder.class
+com/academy/core/CoreApplication.class
